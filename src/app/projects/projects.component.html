@@ -1,0 +1,8 @@
+<h2>My Projects</h2>
+<ul class="projects">
+  <li *ngFor="let project of projects">
+    <a routerLink="/todo/{{project.id}}">
+      <span class="badge">{{project.id}}</span> {{project.title}}
+    </a>
+  </li>
+</ul>
