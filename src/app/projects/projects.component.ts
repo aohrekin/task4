@@ -29,4 +29,12 @@ export class ProjectsComponent implements OnInit {
   ngOnInit() {
     this.getProjects();
   }
+  add(title: string): void {
+  title = title.trim();
+  if (!title) { return; }
+  this.projectService.addProject({ title } as Project)
+    .subscribe(project => {
+      this.projects.push(project);
+    });
+  }
 }

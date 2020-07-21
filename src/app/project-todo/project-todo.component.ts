@@ -32,4 +32,9 @@ export class ProjectTodoComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+  this.projectService.updateProject(this.project)
+    .subscribe(() => this.goBack());
+  }
 }
